@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_object_article_sections",
+  "info": {
+    "displayName": "articleSection",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "sectionHeading": {
+      "type": "string"
+    },
+    "para": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

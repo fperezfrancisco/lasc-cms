@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_array_article_sections",
+  "info": {
+    "displayName": "articleSections",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "articleSection": {
+      "type": "component",
+      "component": "object.article-section",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

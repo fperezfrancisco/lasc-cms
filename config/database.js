@@ -64,20 +64,24 @@ const path = require("path");
 }
 
 // config/database.js
-// config/database.js
-
 module.exports = ({ env }) => ({
   connection: {
-    client: "postgres",
-    connection: {
-      host: env("DATABASE_HOST"),
-      port: env.int("DATABASE_PORT", 5432),
-      database: env("DATABASE_NAME"),
-      user: env("DATABASE_USERNAME"),
-      password: env("DATABASE_PASSWORD"),
-      ssl: {
-        rejectUnauthorized: false, // <- THIS LINE FIXES THE ERROR
-      },
-    },
+    client: env("NODE_ENV") === "production" ? "postgres" : "sqlite",
+    connection:
+      env("NODE_ENV") === "production"
+        ? {
+            host: env("DATABASE_HOST"),
+            port: env.int("DATABASE_PORT", 5432),
+            database: env("DATABASE_NAME"),
+            user: env("DATABASE_USERNAME"),
+            password: env("DATABASE_PASSWORD"),
+            ssl: {
+              rejectUnauthorized: false,
+            },
+          }
+        : {
+            filename: env("DATABASE_FILENAME", ".tmp/data.db"),
+          },
+    useNullAsDefault: env("NODE_ENV") !== "production",
   },
 });
