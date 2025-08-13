@@ -455,6 +455,9 @@ export interface ApiNewsMediaNewsMedia extends Struct.CollectionTypeSchema {
       'array.article-sections',
       false
     >;
+    articleType: Schema.Attribute.Enumeration<
+      ['mainHero', 'subHero', 'regular']
+    >;
     author: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

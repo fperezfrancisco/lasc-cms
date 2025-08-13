@@ -74,6 +74,14 @@
     },
     "previewText": {
       "type": "string"
+    },
+    "articleType": {
+      "type": "enumeration",
+      "enum": [
+        "mainHero",
+        "subHero",
+        "regular"
+      ]
     }
   }
 }
