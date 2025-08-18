@@ -1,0 +1,48 @@
+{
+    "kind": "collectionType",
+    "collectionName": "teams",
+    "info": {
+        "singularName": "team",
+        "pluralName": "teams",
+        "displayName": "Team"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "team": {
+            "type": "string"
+        },
+        "coach": {
+            "type": "string"
+        },
+        "image": {
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ],
+            "type": "media",
+            "multiple": false
+        },
+        "imageSmall": {
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ],
+            "type": "media",
+            "multiple": false
+        },
+        "gender": {
+            "type": "enumeration",
+            "enum": [
+                "boys",
+                "girls"
+            ]
+        }
+    }
+}

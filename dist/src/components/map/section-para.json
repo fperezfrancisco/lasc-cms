@@ -1,0 +1,16 @@
+{
+    "collectionName": "components_map_section_paras",
+    "info": {
+        "displayName": "sectionPara",
+        "icon": "message"
+    },
+    "options": {},
+    "attributes": {
+        "sectionHeading": {
+            "type": "string"
+        },
+        "para": {
+            "type": "text"
+        }
+    }
+}

@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news_medias",
+  "info": {
+    "singularName": "news-media",
+    "pluralName": "news-medias",
+    "displayName": "NewsMedia"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "previewText": {
+      "type": "string"
+    },
+    "imgMain": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "imgWide": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "imgPortrait": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "imgSquare": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "articleSections": {
+      "displayName": "articleSections",
+      "type": "component",
+      "repeatable": false,
+      "component": "array.article-sections"
+    }
+  }
+}
