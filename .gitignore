@@ -1,0 +1,1 @@
+node_modules/ .strapi/ build/ dist/ public/uploads/ .env .cache .tmp/ .strapi-updater.json package-lock.json
