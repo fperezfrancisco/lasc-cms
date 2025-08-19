@@ -4,7 +4,7 @@
   "private": true,
   "description": "A Strapi application",
   "scripts": {
-    "build": "chmod +x node_modules/.bin/strapi && strapi build",
+    "build": "npm install --platform=linux --arch=x64 sharp && chmod +x node_modules/.bin/strapi && strapi build",
     "prebuild": "rm -rf dist",
     "deploy": "strapi deploy",
     "develop": "strapi develop",
@@ -21,6 +21,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
+    "sharp": "^0.33.5",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
