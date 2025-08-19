@@ -3,11 +3,13 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface ArrayArticleSections extends Struct.ComponentSchema {
   collectionName: 'components_array_article_sections';
   info: {
+    description: '';
     displayName: 'articleSections';
     icon: 'bulletList';
   };
   attributes: {
-    sectionPara: Schema.Attribute.Component<'map.section-para', true>;
+    para: Schema.Attribute.Text;
+    sectionHeading: Schema.Attribute.String;
   };
 }
 

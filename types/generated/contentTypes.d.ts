@@ -486,10 +486,7 @@ export interface ApiNewsMediaNewsMedia extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    articleSections: Schema.Attribute.Component<
-      'array.article-sections',
-      false
-    >;
+    articleSections: Schema.Attribute.Component<'array.article-sections', true>;
     articleType: Schema.Attribute.Enumeration<
       ['mainHero', 'subHero', 'regular']
     >;

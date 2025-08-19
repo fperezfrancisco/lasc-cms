@@ -2,15 +2,16 @@
   "collectionName": "components_array_article_sections",
   "info": {
     "displayName": "articleSections",
-    "icon": "bulletList"
+    "icon": "bulletList",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "sectionPara": {
-      "displayName": "sectionPara",
-      "type": "component",
-      "repeatable": true,
-      "component": "map.section-para"
+    "sectionHeading": {
+      "type": "string"
+    },
+    "para": {
+      "type": "text"
     }
   }
 }
