@@ -4,7 +4,8 @@
   "info": {
     "singularName": "news-media",
     "pluralName": "news-medias",
-    "displayName": "NewsMedia"
+    "displayName": "NewsMedia",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,50 +22,72 @@
       "type": "string"
     },
     "imgMain": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "imgWide": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "imgPortrait": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "imgSquare": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "articleSections": {
       "displayName": "articleSections",
       "type": "component",
       "repeatable": false,
       "component": "array.article-sections"
+    },
+    "articleType": {
+      "type": "enumeration",
+      "enum": [
+        "mainHero",
+        "subHero",
+        "regular"
+      ]
+    },
+    "Thumbnail": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

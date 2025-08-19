@@ -369,6 +369,42 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAccomplishmentAccomplishment
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'accomplishments';
+  info: {
+    displayName: 'Accomplishment';
+    pluralName: 'accomplishments';
+    singularName: 'accomplishment';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    accomplishmentDate: Schema.Attribute.Date;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    imageSmall: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::accomplishment.accomplishment'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    team: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiAlumniAlumni extends Struct.CollectionTypeSchema {
   collectionName: 'alumnis';
   info: {
@@ -441,6 +477,7 @@ export interface ApiCarouselSlideCarouselSlide
 export interface ApiNewsMediaNewsMedia extends Struct.CollectionTypeSchema {
   collectionName: 'news_medias';
   info: {
+    description: '';
     displayName: 'NewsMedia';
     pluralName: 'news-medias';
     singularName: 'news-media';
@@ -452,6 +489,9 @@ export interface ApiNewsMediaNewsMedia extends Struct.CollectionTypeSchema {
     articleSections: Schema.Attribute.Component<
       'array.article-sections',
       false
+    >;
+    articleType: Schema.Attribute.Enumeration<
+      ['mainHero', 'subHero', 'regular']
     >;
     author: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
@@ -470,6 +510,48 @@ export interface ApiNewsMediaNewsMedia extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     previewText: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    Thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProgramProgram extends Struct.CollectionTypeSchema {
+  collectionName: 'programs';
+  info: {
+    displayName: 'Program';
+    pluralName: 'programs';
+    singularName: 'program';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    button: Schema.Attribute.Boolean;
+    buttonText: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.Text;
+    featureImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    imageSmall: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    link: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::program.program'
+    > &
+      Schema.Attribute.Private;
+    order: Schema.Attribute.Integer;
+    programType: Schema.Attribute.Enumeration<['featured', 'regular']>;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -1068,9 +1150,11 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::accomplishment.accomplishment': ApiAccomplishmentAccomplishment;
       'api::alumni.alumni': ApiAlumniAlumni;
       'api::carousel-slide.carousel-slide': ApiCarouselSlideCarouselSlide;
       'api::news-media.news-media': ApiNewsMediaNewsMedia;
+      'api::program.program': ApiProgramProgram;
       'api::staff.staff': ApiStaffStaff;
       'api::team.team': ApiTeamTeam;
       'api::test.test': ApiTestTest;
